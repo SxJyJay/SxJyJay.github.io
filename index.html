@@ -78,7 +78,7 @@
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
           <!-- 只显示图片 -->
-          <img src="images/Lumen_teasure_1.png" alt="lumen" width="160" height="160">
+          <img src="images/Lumen_teasure_1.png" alt="lumen" width="160" height="160" class="zoomable" onclick="zoomImage(this)">
         </div>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
@@ -107,6 +107,23 @@
       </td>
     </tr>
 
+<style>
+  .zoomable {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .zoomable.zoomed {
+    transform: scale(2); /* 放大比例 */
+    z-index: 10;
+    position: relative;
+  }
+</style>
+
+<script>
+  function zoomImage(img) {
+    img.classList.toggle("zoomed"); // 点击切换 zoomed 类
+  }
+</script>
 		  
     <tr onmouseout="simvs_stop()" onmouseover="simvs_start()">
       <td style="padding:16px;width:20%;vertical-align:middle">
